@@ -39,7 +39,7 @@ if __name__ == "__main__":
 
     # Welcome player to game
     print("----------")
-    print("Welcome to the Rock-Paper-Scissors Game", player_name, "! Lets get started")
+    print("Welcome to the Rock-Paper-Scissors Game,", player_name, "! Let's get started.")
     print("----------")
 
     # Processing User Inputs
