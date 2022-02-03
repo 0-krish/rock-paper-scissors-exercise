@@ -1,0 +1,14 @@
+#
+# Requirements.txt
+#
+# Rock-Paper-Scissors Exercise
+#
+# Author: Krish Sarawgi
+#   Github: "0-krish"
+#   NetID: ks1730
+#
+# this is the requirements file to install dependencies through pip
+
+# to auto-test functions
+pytest
+
