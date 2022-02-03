@@ -9,14 +9,44 @@
 #
 # this is the file with the main and determine_winner functions
 
-def main():
+# Function: Determining the Winner
+def determine_winner(user_decision, computer_decision):
+
+    if user_decision == computer_decision:
+        winning_player = None
+    elif user_decision == "rock":
+        if computer_decision == "paper":
+            winning_player = computer_decision
+        if computer_decision == "scissors":
+            winning_player = user_decision
+    elif user_decision == "paper":
+        if computer_decision == "rock":
+            winning_player = user_decision
+        if computer_decision == "scissors":
+            winning_player = computer_decision
+    elif user_decision == "scissors":
+        if computer_decision == "paper":
+            winning_player = user_decision
+        if computer_decision == "rock":
+            winning_player = computer_decision
+
+    return winning_player
+
+if __name__ == "__main__":
     # Importing the Environment Variable
     import os
     player_name = os.getenv("PLAYER_NAME", default="Player One")
 
+    # Welcome player to game
+    print("----------")
+    print("Welcome to the Rock-Paper-Scissors Game", player_name, "! Lets get started")
+    print("----------")
+
     # Processing User Inputs
-    print("Play your hand: rock, paper, or scissors?")
-    user_input = input()
+    rock = "rock"
+    paper = "paper"
+    scissors = "scissors"
+    user_input = input("Play your hand: rock, paper, or scissors? ")
 
     # Validating User Inputs
     validated_user_input = user_input.lower()
@@ -35,19 +65,21 @@ def main():
     from random import choice
     valid_choices = ["rock", "paper", "scissors"]
     computer_choice = choice(valid_choices)
+    print("Computer chose:", computer_choice)
 
     # Determining the Winner
     winner = determine_winner(validated_user_input, computer_choice)
 
     # Displaying Results
-    print(winner)
-
-# Function: Determining the Winner
-def determine_winner(user_decision, computer_decision):
-    winning_player = "user"
-    return winning_player
-
-# Running the game through the main function
-if __name__ == "__main__":
-    print("Welcome to the Rock-Paper-Scissors Game! Lets get started.")
-    # The RPS game will now run through the main function
+    print("----------")
+    if winner is None:
+        print("It's a tie!")
+    elif winner == computer_choice:
+        print("Oops! Computer won.")
+    elif winner == validated_user_input:
+        if player_name == "Player One":
+            print("Yay! You won.")
+        else:
+            print("Yay!", player_name, "won.")
+    print("----------")
+    print("Thanks for playing! PLay again soon.")
