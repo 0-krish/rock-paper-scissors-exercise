@@ -39,13 +39,10 @@ if __name__ == "__main__":
 
     # Welcome player to game
     print("----------")
-    print("Welcome to the Rock-Paper-Scissors Game,", player_name, "! Let's get started.")
+    print("Welcome to the Rock-Paper-Scissors Game, " + player_name + "! Let's get started.")
     print("----------")
 
     # Processing User Inputs
-    rock = "rock"
-    paper = "paper"
-    scissors = "scissors"
     user_input = input("Play your hand: rock, paper, or scissors? ")
 
     # Validating User Inputs
@@ -82,4 +79,4 @@ if __name__ == "__main__":
         else:
             print("Yay!", player_name, "won.")
     print("----------")
-    print("Thanks for playing! PLay again soon.")
+    print("Thanks for playing! Play again soon.")
