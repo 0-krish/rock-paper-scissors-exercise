@@ -1,5 +1,5 @@
 #
-# game.py
+# game_test.py
 #
 # Rock-Paper-Scissors Exercise
 #
